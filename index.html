@@ -5,15 +5,104 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <!-- <script src="/index.js" type="module"></script> -->
+    <link rel="stylesheet" href="/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/SDK.js"></script>
+
+    <script src="/index.js"></script>
   </head>
   <body>
-    <div>
-      <div>
-        <button onclick="connect()">connect</button>
+    <div class="flex">
+      <div style="margin-left: 1rem">
+        <button onclick="register()">register</button>
+      </div>
+      <div style="margin-left: 1rem">
+        <button onclick="subscribe()">subscribe</button>
+      </div>
+
+      <div style="margin-left: 1rem">
+        <button id="myBtn">send message</button>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="flex">
+              <input
+                type="text"
+                value=""
+                name="messageTxt"
+                id="messageTxt"
+                required
+              />
+              <button
+                style="
+                  display: flex;
+                  justify-content: space-around;
+                  align-items: center;
+                  height: 2rem;
+                  width: 5rem;
+                "
+                onclick="sendMessage()"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-send"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"
+                  />
+                </svg>
+                send
+              </button>
+            </div>
+            <div>
+              <fieldset>
+                <legend>channel_key</legend>
+                <input
+                  required
+                  type="text"
+                  value="AACO5B_L67HeJxw7InqZz9bAw4V2KyJQ"
+                  name="channel_key"
+                  id="channel_key"
+                  placeholder="channel_key"
+                  style="width: 100%"
+                />
+              </fieldset>
+              <fieldset>
+                <legend>channel_name</legend>
+                <input
+                  required
+                  type="text"
+                  value="115G1WZI-2502/"
+                  name="channel_name"
+                  id="channel_name"
+                  style="width: 100%"
+                />
+              </fieldset>
+              <fieldset>
+                <legend>Group Title</legend>
+                <input
+                  type="text"
+                  value="david-david2"
+                  readonly="readonly"
+                  disabled="disabled"
+                  name=""
+                  id=""
+                />
+              </fieldset>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <script>
+
+    <!-- <script>
       const projectID = "172A87QU";
       const tenant = "https://tenant.vdotok.com/Login";
       const connect = async () => {
@@ -35,6 +124,7 @@
           console.log(data, "<--------data");
         })();
       };
-    </script>
+    </script> -->
+    <script src="/behaviour.js"></script>
   </body>
 </html>
